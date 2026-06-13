@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', e => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
-        e.preventDefault();
+        e.preventDefault(); 
         target.scrollIntoView({ behavior: 'smooth' });
       }
     });
