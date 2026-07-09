@@ -10,17 +10,45 @@
   <meta property="og:title" content="Bladimir Balderrama — Desarrollador Web & Diseñador">
   <meta property="og:description" content="Portafolio profesional de Bladimir Balderrama. Desarrollo web y diseño gráfico con 9+ años de experiencia.">
   <meta property="og:type" content="website">
+  <!-- TODO: reemplaza con tu URL real de Vercel, ej: https://portafolio-bladimir.vercel.app -->
   <meta property="og:url" content="https://tu-dominio.com">
-  
+  <meta property="og:image" content="img/perfil.webp">
+
   <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- TODO: reemplaza con tu URL real de Vercel -->
   <link rel="canonical" href="https://tu-dominio.com">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bladimir Balderrama",
+    "jobTitle": "Desarrollador Web & Diseñador Gráfico",
+    "image": "img/perfil.webp",
+    "email": "mailto:blopezbladimir@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Cruz",
+      "addressCountry": "Bolivia"
+    },
+    "knowsAbout": ["WordPress", "HTML", "CSS", "JavaScript", "Photoshop", "Canva", "Marketing Digital"]
+  }
+  </script>
 </head>
 <body>
 
 <div class="cursor-dot" id="cursor"></div>
+<div class="grid-overlay" id="gridOverlay">
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+</div>
+<button class="grid-toggle" id="gridToggle" aria-label="Mostrar cuadrícula del sistema de diseño" aria-pressed="false">GRID</button>
 
 <!-- NAV -->
 <nav>
@@ -39,8 +67,10 @@
 
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
+  <span class="crop crop-tl"></span>
+  <span class="crop crop-tr"></span>
+  <span class="crop crop-bl"></span>
+  <span class="crop crop-br"></span>
 
   <div class="hero-inner">
 
@@ -56,7 +86,7 @@
 
       <div class="hero-avatar-wrap">
         <div class="hero-avatar-ring"></div>
-        <img src="img/perfil.png" alt="Bladimir Balderrama" class="hero-avatar">
+        <img src="img/perfil.webp" alt="Bladimir Balderrama" class="hero-avatar" width="600" height="848">
         <div class="hero-avatar-tag">
           <span class="dot-live"></span>
           Disponible
@@ -102,6 +132,13 @@
          class="btn-secondary btn-cv"><span>Descargar CV</span><span>↓</span></a>
         <a href="#contacto" class="btn-secondary"><span>Contactame.</span></a>
       </div>
+
+      <div class="swatch-strip" aria-hidden="true">
+        <div class="swatch swatch-paper">PAPER<span>#F5F5F1</span></div>
+        <div class="swatch swatch-ink">INK<span>#131319</span></div>
+        <div class="swatch swatch-cobalt">COBALT<span>#2A3AFF</span></div>
+        <div class="swatch swatch-signal">SIGNAL<span>#F4C430</span></div>
+      </div>
     </div>
 
   </div>
@@ -136,7 +173,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="bento-card bento-exp">
         <h3>Experiencia</h3>
         <div class="exp-number">9</div>
-        <div class="exp-label">Proyectos desarrolados.</div>
+        <div class="exp-label">Proyectos desarrollados.</div>
       </div>
 
       <div class="bento-card bento-tools">
@@ -145,11 +182,11 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
           <span class="pill active">WordPress</span>
           <span class="pill active">HTML</span>
           <span class="pill active">CSS</span>
-          <span class="pill active">Javasceipt</span>
-          <span class="pill active">Wordpress</span>
+          <span class="pill active">JavaScript</span>
+          <span class="pill active">Git</span>
           <span class="pill">Photoshop</span>
           <span class="pill">Canva</span>
-          <span class="pill">Micosoft oficce</span>
+          <span class="pill">Microsoft Office</span>
         </div>
       </div>
 
@@ -272,7 +309,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="project-card" data-category="web">
         <div class="project-visual">
           <div class="project-visual-inner">
-            <img src="img/grupos-whatsapp.jpg" alt="Grupos WhatsApp Bolivia" class="project-image" loading="lazy">
+            <img src="img/grupos-whatsapp.webp" alt="Grupos WhatsApp Bolivia" class="project-image" loading="lazy" width="700" height="1298">
             <div class="project-image-overlay"></div>
           </div>
           <div class="project-overlay">
@@ -301,7 +338,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="project-card" data-category="web">
         <div class="project-visual">
           <div class="project-visual-inner">
-            <img src="img/tikdown.jpg" alt="TikTok Downloader" class="project-image" loading="lazy">
+            <img src="img/tikdown.webp" alt="TikTok Downloader" class="project-image" loading="lazy" width="700" height="1296">
             <div class="project-image-overlay"></div>
           </div>
           <div class="project-overlay">
@@ -331,7 +368,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="project-card" data-category="web">
         <div class="project-visual">
           <div class="project-visual-inner">
-            <img src="img/tutiendabo.jpg" alt="Lopez Style Landing Page" class="project-image" loading="lazy">
+            <img src="img/tutiendabo.webp" alt="Lopez Style Landing Page" class="project-image" loading="lazy" width="700" height="1404">
             <div class="project-image-overlay"></div>
           </div>
           <div class="project-overlay">
@@ -360,7 +397,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="project-card" data-category="web marketing">
         <div class="project-visual">
           <div class="project-visual-inner">
-            <img src="img/empleoyabolivia.jpg" alt="EmpleoYa Bolivia" class="project-image" loading="lazy">
+            <img src="img/empleoyabolivia.webp" alt="EmpleoYa Bolivia" class="project-image" loading="lazy" width="700" height="1299">
             <div class="project-image-overlay"></div>
           </div>
           <div class="project-overlay">
@@ -390,7 +427,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="project-card" data-category="web">
         <div class="project-visual">
           <div class="project-visual-inner">
-            <img src="img/cardlinkpro.jpg" alt="CardLinkPro" class="project-image" loading="lazy">
+            <img src="img/cardlink.webp" alt="CardLinkPro" class="project-image" loading="lazy" width="700" height="1298">
             <div class="project-image-overlay"></div>
           </div>
           <div class="project-overlay">
@@ -419,7 +456,8 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="project-card" data-category="diseno">
         <div class="project-visual">
           <div class="project-visual-inner">
-            <img src="img/campana-academica.jpg" alt="Campaña Académica FI Chaco" class="project-image" loading="lazy">
+            <!-- TODO: sube una captura real a img/campana-academica.jpg y restaura el <img> -->
+            <div class="project-image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:#fff;font-size:2rem;">🎨</div>
             <div class="project-image-overlay"></div>
           </div>
           <div class="project-overlay">
@@ -449,7 +487,8 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
       <div class="project-card" data-category="marketing">
         <div class="project-visual">
           <div class="project-visual-inner">
-            <img src="img/estrategia-seguros.jpg" alt="Estrategia Digital" class="project-image" loading="lazy">
+            <!-- TODO: sube una captura real a img/estrategia-seguros.jpg y restaura el <img> -->
+            <div class="project-image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0ea5e9,#0369a1);color:#fff;font-size:2rem;">📊</div>
             <div class="project-image-overlay"></div>
           </div>
           <div class="project-overlay">
@@ -665,7 +704,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
 
     <h2 class="contact-title reveal">
       ¿Tienes un<br>
-      <span class="ghost-text">proyecto</span> en mente<span style="color:var(--accent)">?</span>
+      <span class="ghost-text">proyecto</span> en mente<span style="color:var(--signal)">?</span>
     </h2>
 
     <p class="contact-sub reveal">
@@ -705,7 +744,7 @@ Soy estudiante de Ingeniería en Sistemas y apasionado por el diseño y desarrol
   <div class="footer-social">
     <a href="mailto:blopezbladimir@gmail.com" class="social-link">Email</a>
     <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="social-link">LinkedIn</a>
-    <a href="https://github.com/tu-usuario" target="_blank" class="social-link">GitHub</a>
+    <a href="https://github.com/BladimirBLopez" target="_blank" class="social-link">GitHub</a>
   </div>
 </footer>
 

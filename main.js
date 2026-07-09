@@ -193,4 +193,15 @@ document.addEventListener('DOMContentLoaded', () => {
   adjustProjectCards();
   window.addEventListener('resize', adjustProjectCards);
 
+  // ── GRID TOGGLE (sistema de diseño a la vista) ──
+  const gridToggle = document.getElementById('gridToggle');
+  const gridOverlay = document.getElementById('gridOverlay');
+  if (gridToggle && gridOverlay) {
+    gridToggle.addEventListener('click', () => {
+      const isActive = gridOverlay.classList.toggle('active');
+      gridToggle.classList.toggle('active', isActive);
+      gridToggle.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
 });
