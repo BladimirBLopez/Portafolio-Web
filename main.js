@@ -248,3 +248,11 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.pm-close').addEventListener('click', close);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 });
+
+
+// ── NUMERACIÓN AUTOMÁTICA ──
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.project-card .project-num').forEach((el, i) => {
+    el.textContent = String(i + 1).padStart(2, '0');
+  });
+});
