@@ -451,3 +451,20 @@ footer {
 
   .hero { height: 100svh; overflow: hidden; }
 }
+/* ── Tarjetas con descripción corta + modal ── */
+.project-card { cursor: pointer; }
+.project-desc { display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.project-more { font-family: inherit; font-size: 13px; font-weight: 600; color: var(--ink); background: none; border: none; padding: 0; margin-right: 16px; cursor: pointer; }
+.project-more:hover { color: var(--accent); }
+
+.pm-overlay { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0,0,0,.7); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+.pm-overlay.open { opacity: 1; visibility: visible; }
+.pm-box { position: relative; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; background: var(--light); color: var(--ink); border-radius: 16px; transform: translateY(20px); transition: transform .25s; }
+.pm-overlay.open .pm-box { transform: none; }
+.pm-close { position: absolute; top: 10px; right: 10px; z-index: 2; width: 36px; height: 36px; border: none; border-radius: 50%; background: rgba(0,0,0,.65); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+.pm-media { height: 220px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--light-2); border-radius: 16px 16px 0 0; }
+.pm-media img, .pm-media .project-image { width: 100%; height: 100%; object-fit: contain; }
+.pm-body { padding: 22px 22px 26px; }
+.pm-body .project-desc { display: block; overflow: visible; font-size: 14.5px; }
+.pm-cta { display: inline-block; background: var(--accent); color: #111; font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 100px; }
+body.pm-lock { overflow: hidden; }

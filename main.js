@@ -204,3 +204,47 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) { console.error('Mobile tweaks error:', err); }
 
 });
+
+// ── MODAL DE PROYECTOS ──
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.project-card');
+  if (!cards.length) return;
+
+  const ov = document.createElement('div');
+  ov.className = 'pm-overlay';
+  ov.setAttribute('role', 'dialog');
+  ov.setAttribute('aria-modal', 'true');
+  ov.innerHTML = '<div class="pm-box"><button class="pm-close" aria-label="Cerrar">×</button><div class="pm-media"></div><div class="pm-body"><div class="project-title"></div><p class="project-desc"></p><div class="project-tags"></div><a class="pm-cta" target="_blank" rel="noopener">Ver proyecto →</a></div></div>';
+  document.body.appendChild(ov);
+  const $ = s => ov.querySelector(s);
+
+  const open = card => {
+    const media = $('.pm-media');
+    media.innerHTML = '';
+    const img = card.querySelector('.project-image');
+    if (img) media.appendChild(img.cloneNode(true));
+    $('.pm-body .project-title').textContent = card.querySelector('.project-title').textContent;
+    $('.pm-body .project-desc').textContent = card.querySelector('.project-desc').textContent.replace(/\s+/g, ' ').trim();
+    $('.pm-body .project-tags').innerHTML = card.querySelector('.project-tags').innerHTML;
+    const link = card.querySelector('.project-link');
+    const cta = $('.pm-cta');
+    if (link) { cta.href = link.href; cta.style.display = ''; } else { cta.style.display = 'none'; }
+    ov.classList.add('open');
+    document.body.classList.add('pm-lock');
+  };
+  const close = () => { ov.classList.remove('open'); document.body.classList.remove('pm-lock'); };
+
+  cards.forEach(card => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'project-more';
+    btn.textContent = 'Ver detalles +';
+    const link = card.querySelector('.project-link');
+    if (link) link.before(btn); else card.querySelector('.project-tags').after(btn);
+    card.addEventListener('click', e => { if (e.target.closest('a')) return; open(card); });
+  });
+
+  ov.addEventListener('click', e => { if (e.target === ov) close(); });
+  $('.pm-close').addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+});
