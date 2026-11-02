@@ -468,3 +468,12 @@ footer {
 .pm-body .project-desc { display: block; overflow: visible; font-size: 14.5px; }
 .pm-cta { display: inline-block; background: var(--accent); color: #111; font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 100px; }
 body.pm-lock { overflow: hidden; }
+
+/* ── Portadas horizontales ── */
+.portfolio-list { grid-template-columns: 1fr; gap: 32px; }
+.project-visual { aspect-ratio: 16/9; }
+.project-image { object-fit: cover; object-position: top center; }
+@media (min-width: 700px) { .portfolio-list { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; } }
+@media (min-width: 1100px) { .portfolio-list { grid-template-columns: repeat(3, 1fr); gap: 48px 32px; } }
+.pm-media { height: 200px; }
+.pm-media img, .pm-media .project-image { object-fit: cover; object-position: top center; }
