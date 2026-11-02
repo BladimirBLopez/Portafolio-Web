@@ -477,3 +477,21 @@ body.pm-lock { overflow: hidden; }
 @media (min-width: 1100px) { .portfolio-list { grid-template-columns: repeat(3, 1fr); gap: 48px 32px; } }
 .pm-media { height: 200px; }
 .pm-media img, .pm-media .project-image { object-fit: cover; object-position: top center; }
+
+/* ── Tarjetas profesionales ── */
+#portafolio { background: var(--light-2); }
+.project-card, .portfolio-list .project-card:last-child {
+  display: flex; flex-direction: column;
+  background: var(--light);
+  border: 1px solid var(--light-line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,.04), 0 10px 28px rgba(0,0,0,.08);
+  transition: box-shadow .25s, border-color .25s;
+}
+.project-card:hover { border-color: var(--accent); box-shadow: 0 4px 8px rgba(0,0,0,.06), 0 16px 36px rgba(0,0,0,.12); }
+.project-visual { border-radius: 0; margin-bottom: 0; border-bottom: 1px solid var(--light-line); }
+.project-card > div:last-child { display: flex; flex-direction: column; flex: 1; padding: 18px 20px 22px; }
+.project-title { font-size: 20px; }
+.project-tag { background: var(--light-2); border-color: transparent; }
+.project-link { margin-top: auto; }
